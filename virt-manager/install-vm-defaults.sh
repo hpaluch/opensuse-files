@@ -19,7 +19,7 @@ d=/usr/share/glib-2.0/schemas
 [ -d "$d" ] || errx "No directory '$d'"
 
 xml=$d/org.virt-manager.virt-manager.gschema.xml
-[ -f "$xml" ] || errx "Schema file '$xml' does not exists - is virt-manager installed?"
+[ -f "$xml" ] || errx "Schema file '$xml' does not exist - is virt-manager installed?"
 
 o=90_virt-manager.gschema.override
 t="$d/$o"

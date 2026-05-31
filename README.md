@@ -1,4 +1,4 @@
-# opensuse-files
+# openSUSE-files
 
 Here are my configuration files and scripts for various openSUSE distributions.
 
