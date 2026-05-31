@@ -1,0 +1,5 @@
+# override virt-manager defaults
+# to apply changes run: sudo glib-compile-schemas /usr/share/glib-2.0/schemas
+[org.virt-manager.virt-manager.console]
+scaling = 0
+resize-guest = 1
