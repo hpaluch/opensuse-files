@@ -7,6 +7,14 @@ set -euo pipefail
 cd `dirname $0`
 errx () { echo "ERROR: $*" >&2; exit 1; }
 
+# mandatory commands/packages
+declare -A pkgs=( [diff]=diffutils [glib-compile-schemas]=glib2-tools )
+for cmd in "${!pkgs[@]}"; do
+	which "$cmd" > /dev/null 2> /dev/null || {
+		errx "Command '$cmd' not found. Please install it with: sudo zypper in ${pkgs[$cmd]}"
+	}
+done
+
 d=/usr/share/glib-2.0/schemas
 [ -d "$d" ] || errx "No directory '$d'"
 
@@ -39,5 +47,4 @@ fi
 }
 echo "OK: Already installed - nothing to do."
 exit 0
-
 
